@@ -1,0 +1,12 @@
+diploma = [ {
+		id: 1,
+      	name: "Brevet Noir",
+      	short_description: "Brevet Noir short_description",
+         long_description: "Brevet Noir long_description"
+   }, {
+     id: 1,
+         name: "Brevet Blanc",
+         short_description: "Brevet Blanc short_description",
+         long_description: "Brevet Blanc long_description",
+   }
+];
