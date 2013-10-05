@@ -1,273 +1,271 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GNEMS Prototype - Template</title>
-<link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet"
-	media="screen" />
-<link href="resources/kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GNEMS Prototype - Template</title>
+        <link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
+        <link href="resources/kendo/styles/kendo.common.min.css" rel="stylesheet" />
         <link href="resources/kendo/styles/kendo.default.min.css" rel="stylesheet" />
         <script src="resources/kendo/js/jquery.min.js"></script>
-        <script src="resources/kendo/js/kendo.web.min.js"></script>
-	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<div id="studentsGrid">
-	</div>
-	<script>
-        $(function() {
-            var studentsDataSource = new kendo.data.DataSource({
-    transport: {
-        read: {
-            url: "./data/students.json",
-            dataType: "json",
-        }
-    },
-    schema: {
-        data: "students"
-    }
-});
-            $("#studentsGrid").kendoGrid({
-          columns:[
-              {
-                  field: "id",
-                  title: "ID"
-              },
-              {
-                  field: "firstname",
-                  title: "First Name"
-          		},
-              {
-                  field: "lastname",
-                  title: "Last Name"
-          }],
-          dataSource: studentsDataSource
-      });
-        });
-	    </script>
-	<div class="container">
-		<div id="gnems_template">
-			<div class="panel" id="gnems_north">
-				<span>GNEMS Prototype - Template</span>
-			</div>
-			<div class="row">
+        <script src="resources/kendo/js/kendo.all.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="studentsGrid"></div>
+        <script>
+            $(function() {
+                var studentsDataSource = new kendo.data.DataSource({
+                    transport: {
+                        read: {
+                            url: "data/students2.json",
+                            dataType: "json"
+                        }
+                    },
+                    schema: {
+                        data: "students",
+                        model: {
+                            id: "id",
+                            fields: {
+                                firstname: {
+                                    type: "string"
+                                },
+                                lastname: {
+                                    type: "string"
+                                }
+                            }
+                        }
+                    }
+                });
 
-				<div class="col-6" id="gnems_west">
-					<div class="panel" id="gnems_subject">
-						<div class="panel-heading" id="gnems_subject_title">
-							<span>Fiche Candidat</span>
-						</div>
-						<div class="row">
-							<div class="col-3" id="gnems_subject_lastname">
-								<span>Nom</span><input id="gnems_subject_lastname_field"
-									class="form-control" placeholder="Nom">
-							</div>
-							<div class="col-3" id="gnems_subject_firstname">
-								<span>Prenom</span><input id="gnems_subject_firstname_field"
-									class="form-control" placeholder="Prenom">
-							</div>
-							<div class="col-3" id="gnems_subject_degree">
-								<span>Diplome prepare</span><input
-									id="gnems_subject_degree_field" class="form-control"
-									placeholder="Diplome">
-							</div>
-							<div class="col-3" id="gnems_subject_evaluation_sequence">
-								<span>Sequence Evaluation</span><input
-									id="gnems_subject_evaluation_sequence_field"
-									class="form-control" placeholder="Sequence">
-							</div>
-						</div>
-					</div>
-					<div class="panel" id="gnems_competence_legend">
-						<div class="panel-heading" id="gnems_competence_legend_title">
-							<span>Competences Evaluees</span>
-						</div>
-						<div class="row">
-							<div class="col-2" id="gnems_competence_legend_AP">
-								<span>AP : s'APpropier</span>
-							</div>
-							<div class="col-2" id="gnems_competence_legend_AN">
-								<span>AN : ANalyser</span>
-							</div>
-							<div class="col-2" id="gnems_competence_legend_R">
-								<span>R : Realiser</span>
-							</div>
-							<div class="col-2" id="gnems_competence_legend_V">
-								<span>V : Valider</span>
-							</div>
-							<div class="col-2" id="gnems_competence_legend_C">
-								<span>C : Communiquer</span>
-							</div>
-						</div>
-					</div>
-					<div class="panel" id="gnems_grid_panel">
-						<div class="panel-heading" id="gnems_grid_panel_title">
-							<span>Grille de competences</span>
-						</div>
-						<table class="table-striped">
-							<thead>
-								<tr>
-									<th>Question</th>
-									<th>Competence Evaluee</th>
-									<th>Commentaire</th>
-									<th>Bareme</th>
-									<th>Score</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1a</td>
-									<td>AP</td>
-									<td></td>
-									<td>2</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>2a</td>
-									<td>AN</td>
-									<td></td>
-									<td>0.5</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>2b</td>
-									<td>V</td>
-									<td></td>
-									<td>1.5</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>3a</td>
-									<td>R</td>
-									<td></td>
-									<td>1</td>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div id="gnems_center"></div>
-				<div class="col-6" id="gnems_east">
-					<div class="panel" id="gnems_subject">
-						<div class="panel-heading" id="gnems_subject_title">
-							<span>Fiche Candidat</span>
-						</div>
-						<div class="row">
-							<div class="col-3" id="gnems_subject_lastname">
-								<span>Nom</span><input id="gnems_subject_lastname_field"
-									class="form-control" placeholder="Nom">
-							</div>
-							<div class="col-3" id="gnems_subject_firstname">
-								<span>Prenom</span><input id="gnems_subject_firstname_field"
-									class="form-control" placeholder="Prenom">
-							</div>
-							<div class="col-3" id="gnems_subject_degree">
-								<span>Diplome prepare</span><input
-									id="gnems_subject_degree_field" class="form-control"
-									placeholder="Diplome">
-							</div>
-							<div class="col-3" id="gnems_subject_evaluation_sequence">
-								<span>Sequence Evaluation</span><input
-									id="gnems_subject_evaluation_sequence_field"
-									class="form-control" placeholder="Sequence">
-							</div>
-						</div>
-					</div>
-					<div class="panel" id="gnems_evaluation_list_summary">
-						<div class="panel-heading"
-							id="gnems_evaluation_list_summary_title">
-							<span>Liste des capacites, connaissances et attittudes
-								evaluees</span>
-						</div>
-						<div id="gnems_evaluation_list_summary_grid">
-							<table class="table-striped">
-								<tbody>
-									<tr>
-										<td>Capacites</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>Connaissances</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>Attitudes</td>
-										<td></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="panel" id="gnems_evaluation_list">
-						<div class="panel-heading" id="gnems_evaluation_list_title">
-							<span>Evaluation</span>
-						</div>
-						<table class="table-striped">
-							<thead>
-								<tr>
-									<th>Competences</th>
-									<th>Capacites</th>
-									<th>Bareme Competences</th>
-									<th>Appreciation Acquisition / Points candidat</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>AP</td>
-									<td>Rechercher, extraire et organiser l'information.</td>
-									<td>2</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>AN</td>
-									<td>Emettre une conjecture, une hypothese. Proposer une
-										methode de resolution, un protocole experimental.</td>
-									<td>0.5</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>R</td>
-									<td>Choisir une methode de resolution, un protocole
-										experimental. Executer une methode de resolution,
-										experimenter, simuler.</td>
-									<td>1.75</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>V</td>
-									<td>Controler la vraisemblance d'une conjecture, d'une
-										hypothese. Critiquer un resultat, argumenter.</td>
-									<td>1.5</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>C</td>
-									<td>Rendre compte d'une demarche, d'un resultat, a l'oral
-										ou a l'ecrit.</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="2">Note arrondie au demi-point superieur</td>
-									<td>5.75</td>
-									<td>0 / 20</td>
-								</tr>
-								<tr>
-									<td colspan="2">Note finale</td>
-									<td>2.875</td>
-									<td>0 / 10</td>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div id="gnems_south"></div>
-		</div>
-	</div>
-</body>
+                $("#studentsGrid").kendoGrid({
+                    columns: [{
+                            field: "firstname",
+                            title: "First Name"
+                        }, {
+                            field: "lastname",
+                            title: "Last Name"
+                        }
+                    ],
+                    dataSource: studentsDataSource
+                });
+
+
+
+            });
+        </script>
+        <div class="container">
+            <div id="gnems_template">
+                <div class="panel" id="gnems_north">
+                    <span>GNEMS Prototype - Template</span>
+                </div>
+                <div class="row">
+                    <div class="col-6" id="gnems_west">
+                        <div class="panel" id="gnems_subject">
+                            <div class="panel-heading" id="gnems_subject_title">
+                                <span>Fiche Candidat</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-3" id="gnems_subject_lastname">
+                                    <span>Nom</span>
+                                    <input id="gnems_subject_lastname_field" class="form-control" placeholder="Nom">
+                                </div>
+                                <div class="col-3" id="gnems_subject_firstname">
+                                    <span>Prenom</span>
+                                    <input id="gnems_subject_firstname_field" class="form-control" placeholder="Prenom">
+                                </div>
+                                <div class="col-3" id="gnems_subject_degree">
+                                    <span>Diplome prepare</span>
+                                    <input id="gnems_subject_degree_field" class="form-control" placeholder="Diplome">
+                                </div>
+                                <div class="col-3" id="gnems_subject_evaluation_sequence">
+                                    <span>Sequence Evaluation</span>
+                                    <input id="gnems_subject_evaluation_sequence_field" class="form-control" placeholder="Sequence">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel" id="gnems_competence_legend">
+                            <div class="panel-heading" id="gnems_competence_legend_title">
+                                <span>Competences Evaluees</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-2" id="gnems_competence_legend_AP">
+                                    <span>AP : s'APpropier</span>
+                                </div>
+                                <div class="col-2" id="gnems_competence_legend_AN">
+                                    <span>AN : ANalyser</span>
+                                </div>
+                                <div class="col-2" id="gnems_competence_legend_R">
+                                    <span>R : Realiser</span>
+                                </div>
+                                <div class="col-2" id="gnems_competence_legend_V">
+                                    <span>V : Valider</span>
+                                </div>
+                                <div class="col-2" id="gnems_competence_legend_C">
+                                    <span>C : Communiquer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel" id="gnems_grid_panel">
+                            <div class="panel-heading" id="gnems_grid_panel_title">
+                                <span>Grille de competences</span>
+                            </div>
+                            <table class="table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Question</th>
+                                        <th>Competence Evaluee</th>
+                                        <th>Commentaire</th>
+                                        <th>Bareme</th>
+                                        <th>Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1a</td>
+                                        <td>AP</td>
+                                        <td></td>
+                                        <td>2</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2a</td>
+                                        <td>AN</td>
+                                        <td></td>
+                                        <td>0.5</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2b</td>
+                                        <td>V</td>
+                                        <td></td>
+                                        <td>1.5</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3a</td>
+                                        <td>R</td>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="gnems_center"></div>
+                    <div class="col-6" id="gnems_east">
+                        <div class="panel" id="gnems_subject">
+                            <div class="panel-heading" id="gnems_subject_title">
+                                <span>Fiche Candidat</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-3" id="gnems_subject_lastname">
+                                    <span>Nom</span>
+                                    <input id="gnems_subject_lastname_field" class="form-control" placeholder="Nom">
+                                </div>
+                                <div class="col-3" id="gnems_subject_firstname">
+                                    <span>Prenom</span>
+                                    <input id="gnems_subject_firstname_field" class="form-control" placeholder="Prenom">
+                                </div>
+                                <div class="col-3" id="gnems_subject_degree">
+                                    <span>Diplome prepare</span>
+                                    <input id="gnems_subject_degree_field" class="form-control" placeholder="Diplome">
+                                </div>
+                                <div class="col-3" id="gnems_subject_evaluation_sequence">
+                                    <span>Sequence Evaluation</span>
+                                    <input id="gnems_subject_evaluation_sequence_field" class="form-control" placeholder="Sequence">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel" id="gnems_evaluation_list_summary">
+                            <div class="panel-heading" id="gnems_evaluation_list_summary_title">
+                                <span>Liste des capacites, connaissances et attittudes evaluees</span>
+                            </div>
+                            <div id="gnems_evaluation_list_summary_grid">
+                                <table class="table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Capacites</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Connaissances</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Attitudes</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="panel" id="gnems_evaluation_list">
+                            <div class="panel-heading" id="gnems_evaluation_list_title">
+                                <span>Evaluation</span>
+                            </div>
+                            <table class="table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Competences</th>
+                                        <th>Capacites</th>
+                                        <th>Bareme Competences</th>
+                                        <th>Appreciation Acquisition / Points candidat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>AP</td>
+                                        <td>Rechercher, extraire et organiser l'information.</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AN</td>
+                                        <td>Emettre une conjecture, une hypothese. Proposer une methode de resolution, un protocole experimental.</td>
+                                        <td>0.5</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>R</td>
+                                        <td>Choisir une methode de resolution, un protocole experimental. Executer une methode de resolution, experimenter, simuler.</td>
+                                        <td>1.75</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>V</td>
+                                        <td>Controler la vraisemblance d'une conjecture, d'une hypothese. Critiquer un resultat, argumenter.</td>
+                                        <td>1.5</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C</td>
+                                        <td>Rendre compte d'une demarche, d'un resultat, a l'oral ou a l'ecrit.</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2">Note arrondie au demi-point superieur</td>
+                                        <td>5.75</td>
+                                        <td>0 / 20</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Note finale</td>
+                                        <td>2.875</td>
+                                        <td>0 / 10</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="gnems_south"></div>
+            </div>
+        </div>
+    </body>
+
 </html>

@@ -1,0 +1,18 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "firstname": "David",
+            "lastname": "Beziat",
+            "diploma": "d1",
+            "seq": "s2"
+        }, 
+        {
+            "id": 2,
+            "firstname": "Marie",
+            "lastname": "Beziat",
+            "diploma": "d2",
+            "seq": "s2"
+        }
+    ]
+}
