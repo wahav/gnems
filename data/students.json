@@ -1,14 +1,18 @@
-students = [ {
-		id: 1,
-      	firstname: "David",
-      	lastname: "Béziat",
-      	diploma.id:"d1",
-      	seq:"s2"
-   }, {
-     id: 2,
-      	firstname: "Marie",
-      	lastname: "Béziat",
-      	diploma.id:"d2",
-      	seq:"s2"
-   }
-];
+{
+    students: [
+        {
+            id: 1,
+            firstname: "David",
+            lastname: "Béziat",
+            diploma: "d1",
+            seq: "s2"
+        }, 
+        {
+            id: 2,
+            firstname: "Marie",
+            lastname: "Béziat",
+            diploma: "d2",
+            seq: "s2"
+        }
+    ]
+}
