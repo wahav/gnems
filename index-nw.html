@@ -9,10 +9,6 @@
         <link href="resources/kendo/styles/kendo.common.min.css" rel="stylesheet" />
         <link href="resources/kendo/styles/kendo.default.min.css" rel="stylesheet" />
         <script src="resources/kendo/js/jquery.min.js"></script>
-<<<<<<< HEAD
-        <script src="resources/bootstrap/js/bootstrap.min.js"></script>
-=======
->>>>>>> 6aa2bbbd1d3ca94b1f0b59c0739882731cfbb3bc
         <script src="resources/kendo/js/kendo.all.min.js"></script>
     </head>
     
@@ -21,22 +17,10 @@
         <script>
             $(function() {
                 var studentsDataSource = new kendo.data.DataSource({
-                    autoSync: true,
                     transport: {
                         read: {
                             url: "data/students2.json",
                             dataType: "json"
-<<<<<<< HEAD
-                        },
-                        update: {
-                            url: "data/students2.json",
-                            dataTyppe: "json"
-                        },
-                        create: {
-                            url: "data/students2.json",
-                            dataType: "json"
-=======
->>>>>>> 6aa2bbbd1d3ca94b1f0b59c0739882731cfbb3bc
                         }
                     },
                     schema: {
@@ -62,15 +46,8 @@
                         }, {
                             field: "lastname",
                             title: "Last Name"
-                        }, {
-                            command: ["edit", "destroy"]
                         }
                     ],
-                    editable: {
-                        mode: "inline",
-                        createAt: "bottom"
-                    },
-                    toolbar: ["create"],
                     dataSource: studentsDataSource
                 });
 
@@ -115,26 +92,6 @@
                             <div class="row">
                                 <div class="col-2" id="gnems_competence_legend_AP">
                                     <span>AP : s'APpropier</span>
-<<<<<<< HEAD
-                                </div>
-                                <div class="col-2" id="gnems_competence_legend_AN">
-                                    <span>AN : ANalyser</span>
-                                </div>
-                                <div class="col-2" id="gnems_competence_legend_R">
-                                    <span>R : Realiser</span>
-                                </div>
-                                <div class="col-2" id="gnems_competence_legend_V">
-                                    <span>V : Valider</span>
-                                </div>
-                                <div class="col-2" id="gnems_competence_legend_C">
-                                    <span>C : Communiquer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel" id="gnems_grid_panel">
-                            <div class="panel-heading" id="gnems_grid_panel_title">
-                                <span>Grille de competences</span>
-=======
                                 </div>
                                 <div class="col-2" id="gnems_competence_legend_AN">
                                     <span>AN : ANalyser</span>
@@ -220,79 +177,8 @@
                                     <span>Sequence Evaluation</span>
                                     <input id="gnems_subject_evaluation_sequence_field" class="form-control" placeholder="Sequence">
                                 </div>
->>>>>>> 6aa2bbbd1d3ca94b1f0b59c0739882731cfbb3bc
-                            </div>
-                            <table class="table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Question</th>
-                                        <th>Competence Evaluee</th>
-                                        <th>Commentaire</th>
-                                        <th>Bareme</th>
-                                        <th>Score</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1a</td>
-                                        <td>AP</td>
-                                        <td></td>
-                                        <td>2</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2a</td>
-                                        <td>AN</td>
-                                        <td></td>
-                                        <td>0.5</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2b</td>
-                                        <td>V</td>
-                                        <td></td>
-                                        <td>1.5</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3a</td>
-                                        <td>R</td>
-                                        <td></td>
-                                        <td>1</td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-<<<<<<< HEAD
-                    </div>
-                    <div id="gnems_center"></div>
-                    <div class="col-6" id="gnems_east">
-                        <div class="panel" id="gnems_subject">
-                            <div class="panel-heading" id="gnems_subject_title">
-                                <span>Fiche Candidat</span>
-                            </div>
-                            <div class="row">
-                                <div class="col-3" id="gnems_subject_lastname">
-                                    <span>Nom</span>
-                                    <input id="gnems_subject_lastname_field" class="form-control" placeholder="Nom">
-                                </div>
-                                <div class="col-3" id="gnems_subject_firstname">
-                                    <span>Prenom</span>
-                                    <input id="gnems_subject_firstname_field" class="form-control" placeholder="Prenom">
-                                </div>
-                                <div class="col-3" id="gnems_subject_degree">
-                                    <span>Diplome prepare</span>
-                                    <input id="gnems_subject_degree_field" class="form-control" placeholder="Diplome">
-                                </div>
-                                <div class="col-3" id="gnems_subject_evaluation_sequence">
-                                    <span>Sequence Evaluation</span>
-                                    <input id="gnems_subject_evaluation_sequence_field" class="form-control" placeholder="Sequence">
-                                </div>
                             </div>
                         </div>
-=======
->>>>>>> 6aa2bbbd1d3ca94b1f0b59c0739882731cfbb3bc
                         <div class="panel" id="gnems_evaluation_list_summary">
                             <div class="panel-heading" id="gnems_evaluation_list_summary_title">
                                 <span>Liste des capacites, connaissances et attittudes evaluees</span>
