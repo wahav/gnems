@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-6">
                     <section id="ficheEdit" data-bind="visible: isFormTemplateEditSelected">
-                        <div id="ficheEdit-info" data-role="listview" data-template="formTemplateFull-template" data-bind="source: editSelected"></div>
+                        <div id="ficheEdit-info" data-role="listview" data-template="formTemplateFull-template" data-bind="source: formTemplates"></div>
                     </section>
                 </div>
             </div>
@@ -66,10 +66,10 @@
         
         <script type="text/template" id="formTemplateFull-template">
 			<div class="view">
-                <label data-bind="text: year, events: { dblclick: startEditFormTemplate } "></label>
-                <label data-bind="text: diploma, events: { dblclick: startEditFormTemplate } "></label>
-                <label data-bind="text: section, events: { dblclick: startEditFormTemplate } "></label>
-                <label data-bind="text: sequence, events: { dblclick: startEditFormTemplate } "></label>
+                <label data-bind="value: editSelected, text: year, events: { dblclick: startEditFormTemplate } "></label>
+                <label data-bind="value: editSelected, text: diploma, events: { dblclick: startEditFormTemplate } "></label>
+                <label data-bind="value: editSelected, text: section, events: { dblclick: startEditFormTemplate } "></label>
+                <label data-bind="value: editSelected, text: sequence, events: { dblclick: startEditFormTemplate } "></label>
 				<button class="editForm" data-bind="click: openFormTemplate"></button>
                 <button class="destroy" data-bind="click: destroyFormTemplate"></button>
 			</div>
