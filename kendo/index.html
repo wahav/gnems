@@ -81,63 +81,117 @@
                 <span>GNEMS Prototype - Template</span>
             </div>
             <div class="row">
-                <div class="col-6">
-                    
+                <div class="col-12">
                     <section id="fiches">
                         <header id="header">
                             <h1>Modeles de fiche</h1>
-                            <input id="new-formTemplate-year" data-bind="enter: saveFormTemplate" placeholder="Annee" autofocus>
-                            <input id="new-formTemplate-field" data-bind="enter: saveFormTemplate" placeholder="Matiere">
-                            <input id="new-formTemplate-diploma" data-bind="enter: saveFormTemplate" placeholder="Diplome">
-                            <input id="new-formTemplate-section" data-bind="enter: saveFormTemplate" placeholder="Section">
-                            <input id="new-formTemplate-sequence" data-bind="enter: saveFormTemplate" placeholder="Sequence">
-                            <input id="new-formTemplate-author" data-bind="enter: saveFormTemplate" placeholder="Auteur">
+                            <div class="panel" id="gnems_subject">
+                                <div class="panel-heading" id="gnems_subject_title">
+                                    <span>Ajout nouveau modele de fiche</span>
+                                </div>
+                                <div class="row">
+                                    
+                                    <div class="col-10">
+                                        <div class="col-2">
+                                            <span>Annee</span>
+                                            <input id="new-formTemplate-year" data-bind="enter: saveFormTemplate" placeholder="Annee" autofocus class="form-control">
+                                        </div>
+                                        <div class="col-2">
+                                            <span>Matiere</span>
+                                            <input id="new-formTemplate-field" data-bind="enter: saveFormTemplate" placeholder="Matiere" class="form-control">
+                                        </div>
+                                         <div class="col-2">
+                                            <span>Diplome</span>
+                                            <input id="new-formTemplate-diploma" data-bind="enter: saveFormTemplate" placeholder="Diplome"class="form-control">
+                                        </div>
+                                        <div class="col-2">
+                                            <span>Section</span>
+                                            <input id="new-formTemplate-section" data-bind="enter: saveFormTemplate" placeholder="Section" class="form-control">
+                                        </div>
+                                        <div class="col-2">
+                                            <span>Sequence</span>
+                                            <input id="new-formTemplate-sequence" data-bind="enter: saveFormTemplate" placeholder="Section" class="form-control">
+                                        </div>
+                                        <div class="col-2">
+                                            <span>Auteur</span>
+                                            <input id="new-formTemplate-author" data-bind="enter: saveFormTemplate" placeholder="Auteur" class="form-control">
+                                        </div>
+                                     </div>
+                                </div>
+                                
+                            </div>
                         </header>
                         <section id="mainFormTemplate" data-bind="visible: isVisibleFormTemplate">
-                            <ul id="formTemplate-list" data-role="listview" data-template="formTemplate-template" data-bind="source: formTemplates"></ul>
+                            <div class="panel" id="formTemplate-list" data-role="listview" data-template="formTemplate-template" data-bind="source: formTemplates"></div>
                         </section>
                         
-                        
                     </section>
-                </div>
-                <div class="col-6">
                     <section id="ficheEdit" data-bind="visible: isFormTemplateEditSelected">
-                        <div id="ficheEdit-info" data-role="listview" data-template="formTemplateFull-template" data-bind="source: editSelected"></div>
+                        <div class="panel" id="gnems_subject">
+                            <div class="panel-heading" id="gnems_subject_title">
+                                <span>Fiche Evaluation</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-2" id="gnems_subject_lastname">
+                                    <span>Annee</span>
+                                    <span data-bind="text: editSelected.year" class="form-control" ></span>
+                                </div>
+                                <div class="col-2" id="gnems_subject_firstname">
+                                    <span>Matiere</span>
+                                    <span data-bind="text: editSelected.field" class="form-control" ></span>
+                                </div>
+                                <div class="col-2" id="gnems_subject_degree">
+                                    <span>Diplome</span>
+                                    <span data-bind="text: editSelected.diploma" class="form-control" ></span>
+                                </div>
+                                <div class="col-2" id="gnems_subject_degree">
+                                    <span>Section</span>
+                                    <span data-bind="text: editSelected.section" class="form-control" ></span>
+                                </div>
+                                <div class="col-3" id="gnems_subject_evaluation_sequence">
+                                    <span>Sequence Evaluation</span>
+                                     <span data-bind="text: editSelected.sequence" class="form-control" ></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel" id="gnems_grid_panel">
+                            <div class="panel-heading" id="gnems_grid_panel_title">
+                                <span>Grille de competences</span>
+                            </div>
+                            </div>
                     </section>
                 </div>
+                
             </div>
         </div>
     
     
     <script type="text/template" id="formTemplate-template">
-		<li data-bind="attr: { class: formTemplateItemClass }">
-			<div class="view">            
-                <span>Fiche : </span>
-                <span data-bind="text: year, events: { dblclick: startEditFormTemplate } "></span><span> - </span>
-                <span data-bind="text: diploma, events: { dblclick: startEditFormTemplate } "></span><span> - </span>
-                <span data-bind="text: section, events: { dblclick: startEditFormTemplate } "></span><span> - </span>
-                <span data-bind="text: sequence, events: { dblclick: startEditFormTemplate } "></span>
-				<button class="editForm" data-bind="click: openFormTemplate, events: { change: isFormTemplateEditSelected }"></button>
-                <button class="destroy" data-bind="click: destroyFormTemplate"></button>
+		
+			<div class="row display">
+                <div class="col-10">
+                    <span>Fiche : </span>
+                    <span data-bind="text: year, events: { dblclick: startEditFormTemplate } "></span><span> - </span>
+                    <span data-bind="text: diploma, events: { dblclick: startEditFormTemplate } "></span><span> - </span>
+                    <span data-bind="text: section, events: { dblclick: startEditFormTemplate } "></span><span> - </span>
+                    <span data-bind="text: sequence, events: { dblclick: startEditFormTemplate } "></span>
+                </div>
+                <div class="col-2">
+                    <button class="editForm" data-bind="click: openFormTemplate, events: { change: isFormTemplateEditSelected }"></button>
+                    <button class="destroy" data-bind="click: destroyFormTemplate"></button>
+                </div>
 			</div>
-			<input class="edit" data-bind="value: year, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
-            <input class="edit" data-bind="value: diploma, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
-            <input class="edit" data-bind="value: section, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
-            <input class="edit" data-bind="value: sequence, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
-		</li>
+            <div class="row edit">
+                <div class="col-10">
+                    <input class="edit" data-bind="value: year, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                    <input class="edit" data-bind="value: diploma, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                    <input class="edit" data-bind="value: section, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                    <input class="edit" data-bind="value: sequence, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                </div>
+			</div>
 	</script>
         
-        <script type="text/template" id="formTemplateFull-template">
-			<div class="view">
-                <label data-bind="text: year, events: { dblclick: startEditFormTemplate } "></label>
-                <label data-bind="text: diploma, events: { dblclick: startEditFormTemplate } "></label>
-                <label data-bind="text: section, events: { dblclick: startEditFormTemplate } "></label>
-                <label data-bind="text: sequence, events: { dblclick: startEditFormTemplate } "></label>
-				<button class="editForm" data-bind="click: openFormTemplate"></button>
-                <button class="destroy" data-bind="click: destroyFormTemplate"></button>
-			</div>
-	</script>
-    
 	<script src="js/base.js"></script>
 	<script src="js/jquery.min.js"></script>
 >>>>>>> 6aa2bbbd1d3ca94b1f0b59c0739882731cfbb3bc
