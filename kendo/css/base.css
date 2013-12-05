@@ -234,19 +234,19 @@ body {
 	transform: scale(1.3);
 }
 
-#formTemplate-list li .destroy:after {
+#formTemplate-list .destroy:after {
 	content: '✖';
 }
 
-#formTemplate-list li .editForm:after {
+#formTemplate-list .editForm:after {
 	content: '[+]';
 }
 
-#formTemplate-list li:hover .destroy, #formTemplate-list li:hover .editForm {
+#formTemplate-list:hover .destroy, #formTemplate-list:hover .editForm {
 	display: block;
 }
 
-#formTemplate-list li .edit {
+#formTemplate-list .edit {
 	display: none;
 }
 

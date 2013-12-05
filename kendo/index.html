@@ -59,26 +59,11 @@
                             </div>
                         </header>
                         <section id="mainFormTemplate" data-bind="visible: isVisibleFormTemplate">
-                            <div class="panel" id="formTemplate-list" data-role="listview" data-template="formTemplate-template" data-bind="source: formTemplates"></div>
+                            <div class="panel" id="formTemplate-list" data-role="listview" 
+                                 data-template="formTemplate-template" data-bind="source: formTemplates"></div>
                         </section>
                         
                     </section>
-<<<<<<< HEAD
-                </div>
-<div class="col-6">
-    <section id="ficheEdit" data-bind="visible: isFormTemplateEditSelected">
-        <label data-bind="text: editSelected.year, events: { dblclick: startEditFormTemplate } "></label>
-        <label data-bind="text: editSelected.diploma, events: { dblclick: startEditFormTemplate } "></label>
-        <label data-bind="text: editSelected.section, events: { dblclick: startEditFormTemplate } "></label>
-        <label data-bind="text: editSelected.sequence, events: { dblclick: startEditFormTemplate } "></label>
-        <button class="editForm" data-bind="click: openFormTemplate"></button>
-        <button class="destroy" data-bind="click: destroyFormTemplate"></button>
-        
-    </section>
-</div>
-</div>
-</div>
-=======
                     <section id="ficheEdit" data-bind="visible: isFormTemplateEditSelected">
                         <div class="panel" id="gnems_subject">
                             <div class="panel-heading" id="gnems_subject_title">
@@ -118,12 +103,11 @@
                 
             </div>
         </div>
->>>>>>> d77e8b61203e79206f88d081285d5cd4cd076793
     
     
     <script type="text/template" id="formTemplate-template">
-		
-			<div class="row display">
+			<div class="row">
+                <div class="view">
                 <div class="col-10">
                     <span>Fiche : </span>
                     <span data-bind="text: year, events: { dblclick: startEditFormTemplate } "></span><span> - </span>
@@ -135,15 +119,17 @@
                     <button class="editForm" data-bind="click: openFormTemplate, events: { change: isFormTemplateEditSelected }"></button>
                     <button class="destroy" data-bind="click: destroyFormTemplate"></button>
                 </div>
-			</div>
-            <div class="row edit">
-                <div class="col-10">
-                    <input class="edit" data-bind="value: year, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
-                    <input class="edit" data-bind="value: diploma, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
-                    <input class="edit" data-bind="value: section, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
-                    <input class="edit" data-bind="value: sequence, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                </div>
+                <div class="edit">
+                    <div class="col-10">
+                        <input class="edit" data-bind="value: year, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                        <input class="edit" data-bind="value: diploma, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                        <input class="edit" data-bind="value: section, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                        <input class="edit" data-bind="value: sequence, events: { change: endEditFormTemplate, blur: endEditFormTemplate }, enter: endEditFormTemplate">
+                    </div>
                 </div>
 			</div>
+            
 	</script>
         
 	<script src="js/base.js"></script>
